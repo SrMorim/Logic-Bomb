@@ -5,8 +5,8 @@ import sys
 import socket
 
 #-=Imports=-#
-from attack import *
 from defense import *
+from attack import *
 from utils import *
 
 #-=Menus=-#
@@ -56,6 +56,7 @@ def defensemenu():
         option = input("[1]Auto Tor\n[2]???\n[3]???\n[x]Back\n>>> ")
         
         if option == "1":
+          autotor()
           break
         elif option == "2":
           break
@@ -121,6 +122,6 @@ if __name__ == "__main__":
      targetip = socket.gethostbyname(target)
      myip = socket.gethostbyname(socket.gethostname())
     
-    #-=Start=-
+    #-=Start=-#
      mainmenu()
     
