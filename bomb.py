@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
-#-=Libs=-
+#-=Libs=-#
 import os
 import sys
 import socket
-import time
 
-#-=Imports=-
+#-=Imports=-#
 from attack import *
 from defense import *
 from utils import *
 
-#-=Menus=-
-#Main Menu
+#-=Menus=-#
+#Main menu
 def mainmenu():
-    while True:
+     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f'''
            __             _         ___             __ 
@@ -22,30 +21,106 @@ def mainmenu():
         /____/\___/\_, /_/\__/   /____/\___/_/_/_/_.__/
                   /___/                                  
        -===============================================-
-        𝑻𝒂𝒓𝒈𝒆𝒕:{target}
-        𝑻𝒂𝒓𝒈𝒆𝒕 𝑰𝑷:{targetip}
+        Target:{target}
+        Target IP:{targetip}
         Your IP:{myip}
         ''')
-        option = str(input("[1]Defense\n[2]Attack\n[3]New Target\n[x]Exit\n>>> "))
-
+        option = input("[1]Defense\n[2]Attack\n[3]New Target\n[x]Exit\n>>> ")
+        
         if option == "1":
-             defensemenu()
-             break
+          defensemenu()
+          break
         elif option == "2":
-             attackmenu()
-             break
+          attackmenu()
+          break
         elif option == "3":
-             newtarget()
+          newtarget()
+          break
         elif option == "x":
-            break
+          print("bye...")
+          break
 
+#Defense Menu
+def defensemenu():
+     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f'''
+          ░█▀▄░█▀▀░█▀▀░█▀▀░█▀█░█▀▀░█▀▀
+          ░█░█░█▀▀░█▀▀░█▀▀░█░█░▀▀█░█▀▀
+          ░▀▀░░▀▀▀░▀░░░▀▀▀░▀░▀░▀▀▀░▀▀▀
+         -============================-
+          Target:{target}
+          Target IP:{targetip}
+          Your IP:{myip}
+        ''')
+        option = input("[1]Auto Tor\n[2]???\n[3]???\n[x]Back\n>>> ")
+        
+        if option == "1":
+          break
+        elif option == "2":
+          break
+        elif option == "3":
+          break
+        elif option == "x":
+          mainmenu()
+          break
 
+#Attack Menu
+def attackmenu():
+     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f'''
+          ░█▀█░▀█▀░▀█▀░█▀█░█▀▀░█░█
+          ░█▀█░░█░░░█░░█▀█░█░░░█▀▄
+          ░▀░▀░░▀░░░▀░░▀░▀░▀▀▀░▀░▀
+         -========================-
+          Target:{target}
+          Target IP:{targetip}
+          Your IP:{myip}
+        ''')
+        option = input("[1]???\n[2]???\n[3]???\n[x]Back\n>>> ")
+        
+        if option == "1":
+          break
+        elif option == "2":
+          break
+        elif option == "3":
+          break
+        elif option == "x":
+          mainmenu()
+          break
+
+#Target Info
+def newtarget():
+     os.system('cls' if os.name == 'nt' else 'clear')
+     
+     global target, targetip, myip
+
+     print("""
+     ░█▀█░█▀▀░█░█░░░▀█▀░█▀█░█▀▄░█▀▀░█▀▀░▀█▀
+     ░█░█░█▀▀░█▄█░░░░█░░█▀█░█▀▄░█░█░█▀▀░░█░
+     ░▀░▀░▀▀▀░▀░▀░░░░▀░░▀░▀░▀░▀░▀▀▀░▀▀▀░░▀░
+    -======================================-
+     """)
+     target = input("New Target: ")
+     targetip = socket.gethostbyname(target)
+     mainmenu()
 
 if __name__ == "__main__":
-    #Required
-    info()
-
-    #Start
-    mainmenu()
-
+     #-=INFO=-#
+     try:
+          target = sys.argv[1]
+     except Exception:
+          print("""
+     ░█▀█░█▀▀░█░█░░░▀█▀░█▀█░█▀▄░█▀▀░█▀▀░▀█▀
+     ░█░█░█▀▀░█▄█░░░░█░░█▀█░█▀▄░█░█░█▀▀░░█░
+     ░▀░▀░▀▀▀░▀░▀░░░░▀░░▀░▀░▀░▀░▀▀▀░▀▀▀░░▀░
+    -======================================-
+     """)
+          target = input("New Target: ")
+     targetip = socket.gethostbyname(target)
+     myip = socket.gethostbyname(socket.gethostname())
+    
+    #-=Start=-
+     mainmenu()
     
