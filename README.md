@@ -1,6 +1,6 @@
-# Exodia - Network Attack and Defense Toolkit
+# Logic-Bomb - Network Attack and Defense Toolkit
 
-Exodia is a Python-based CLI tool designed for performing basic network reconnaissance, attack, and defense simulations. It offers a user-friendly interface to conduct tasks such as port scanning, brute force attempts, and network defense operations. This script is intended for educational purposes and to demonstrate basic concepts in network security.
+Logic-Bomb is a Python-based CLI tool designed for performing basic network reconnaissance, attack, and defense simulations. It offers a user-friendly interface to conduct tasks such as port scanning, brute force attempts, and network defense operations. This script is intended for educational purposes and to demonstrate basic concepts in network security.
 
 ---
 
@@ -61,7 +61,7 @@ pip install tqdm
 2. Open a terminal and navigate to the script directory.
 3. Run the script using:
    ```bash
-   python3 exodia.py <target>
+   python3 Logic-Bomb.py <target>
    ```
    Replace `<target>` with the target hostname or IP address.
 
@@ -125,4 +125,4 @@ When performing a port scan, you have the option to save the results to a file:
 
 ---
 
-Enjoy exploring network security concepts responsibly with **Exodia**!
+Enjoy exploring network security concepts responsibly with **Logic-Bomb**!
